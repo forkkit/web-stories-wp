@@ -24,7 +24,11 @@ import styled from 'styled-components';
  */
 import { THEME_CONSTANTS } from '../../../design-system';
 import { TypographyPresets } from '../typography';
-import { Z_INDEX } from '../../constants';
+import {
+  STORY_PREVIEW_WIDTH,
+  VIEWPORT_BREAKPOINT,
+  Z_INDEX,
+} from '../../constants';
 
 export const Table = styled.table`
   ${TypographyPresets.Small};
@@ -154,7 +158,7 @@ export const TableContentCell = styled(TableCell)`
 `;
 
 export const TablePreviewCell = styled(TableCell)`
-  width: ${({ theme }) => theme.DEPRECATED_THEME.previewWidth.thumbnail}px;
+  width: ${STORY_PREVIEW_WIDTH[VIEWPORT_BREAKPOINT.THUMBNAIL]}px;
 
   @media ${({ theme }) => theme.DEPRECATED_THEME.breakpoint.largeDisplayPhone} {
     display: none;

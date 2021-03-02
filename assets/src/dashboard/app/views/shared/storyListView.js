@@ -54,8 +54,10 @@ import {
   SORT_DIRECTION,
   STORY_SORT_OPTIONS,
   STORY_STATUS,
+  FULLBLEED_RATIO,
+  STORY_PREVIEW_WIDTH,
+  VIEWPORT_BREAKPOINT,
 } from '../../../constants';
-import { FULLBLEED_RATIO } from '../../../constants/pageStructure';
 import {
   PreviewPage,
   PreviewErrorBoundary,
@@ -76,9 +78,9 @@ const PreviewContainer = styled.div`
   display: inline-block;
   position: relative;
   overflow: hidden;
-  width: ${({ theme }) => theme.DEPRECATED_THEME.previewWidth.thumbnail}px;
-  height: ${({ theme }) =>
-    theme.DEPRECATED_THEME.previewWidth.thumbnail / FULLBLEED_RATIO}px;
+  width: ${STORY_PREVIEW_WIDTH[VIEWPORT_BREAKPOINT.THUMBNAIL]}px;
+  height: ${STORY_PREVIEW_WIDTH[VIEWPORT_BREAKPOINT.THUMBNAIL] /
+  FULLBLEED_RATIO}px;
   vertical-align: middle;
   border-radius: ${({ theme }) =>
     theme.DEPRECATED_THEME.storyPreview.borderRadius}px;

@@ -38,6 +38,8 @@ import DragHandle from './handle';
 
 const Header = styled.h2`
   color: ${({ theme }) => theme.colors.fg.secondary};
+  background-color: ${({ isSecondary, theme }) =>
+    isSecondary && theme.colors.interactiveBg.secondaryNormal};
   ${({ hasResizeHandle }) => hasResizeHandle && 'padding-top: 0;'}
   margin: 0;
   position: relative;
@@ -107,6 +109,7 @@ function Title({
   secondaryAction,
   isResizable,
   canCollapse,
+  ...props
 }) {
   const {
     state: {
@@ -163,6 +166,7 @@ function Title({
       isPrimary={isPrimary}
       isSecondary={isSecondary}
       hasResizeHandle={isResizable && !isCollapsed}
+      {...props}
     >
       {isResizable && (
         <DragHandle
